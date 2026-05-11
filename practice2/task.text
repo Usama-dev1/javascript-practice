@@ -1,0 +1,65 @@
+Build a Cargo Manifest Validator
+
+In this lab, you will use JavaScript to normalize and validate cargo manifests. A cargo manifest is a document that typically lists goods being transported (for example, by ship or train) and includes details about those goods.
+
+Each cargo manifest will be represented as an object with the following properties:
+
+- `containerId`: a positive integer identifying the associated cargo container.
+- `destination`: a non-empty string (after trimming whitespace) denoting the cargo's target destination.
+- `weight`: a positive number representing the cargo's weight.
+- `unit`: a string describing the units for the cargo's weight property (either `"kg"` for kilograms or `"lb"` for pounds).
+- `hazmat`: a boolean value indicating whether hazardous material handling is needed.
+
+Example cargo manifest object:
+
+```js
+{
+  containerId: 1,
+  destination: "Monterey, California, USA",
+  weight: 831,
+  unit: "lb",
+  hazmat: false
+}
+```
+
+## Objective
+
+Fulfill the user stories below and get all the tests to pass to complete the lab.
+
+## User Stories
+
+### 1. `normalizeUnits(manifest)`
+
+- Must not mutate the original manifest object.
+- Must return a new object.
+- Must normalize `weight` to kilograms and set `unit` to `"kg"`.
+- If `unit` is `"lb"`, convert `weight` to kilograms using `1 lb = 0.45 kg`.
+- If `unit` is already `"kg"`, leave `weight` and `unit` unchanged.
+
+### 2. `validateManifest(manifest)`
+
+- Must not mutate the original manifest object.
+- Must return a new object.
+- If the input manifest is valid, return an empty object.
+- If the input manifest is invalid, return an object with one entry per invalid or missing property:
+  - Missing properties should have the value `"Missing"`.
+  - Invalid properties should have the value `"Invalid"`.
+
+Example invalid return value:
+
+```js
+{
+  destination: "Missing",
+  weight: "Invalid"
+}
+```
+
+### 3. `processManifest(manifest)`
+
+- If the manifest object is valid:
+  - Log `Validation success: ${containerId}`.
+  - Log `Total weight: ${weight} kg` where `weight` is normalized using `normalizeUnits()`.
+- If the manifest object is not valid:
+  - Log `Validation error: ${containerId}`.
+  - Log the object returned by `validateManifest(manifest)`.
+- Each case should use two separate `console.log()` calls.
