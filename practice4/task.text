@@ -1,0 +1,7 @@
+1.Write a function getVowelCount(sentence) that returns the number of vowels (a, e, i, o, u) in the given string. Case‑insensitive.
+
+2.Write a function getConsonantCount(sentence) that returns the number of consonants (letters that are not vowels) in the given string. Ignore non‑letter characters.
+
+3.Write a function getPunctuationCount(sentence) that returns the number of punctuation marks (e.g., .,!?;:()- etc.) in the given string.
+
+4.Write a function getWordCount(sentence) that returns the number of words in the given string. Words are separated by spaces; multiple spaces should not create extra words. An empty string returns 0.
