@@ -1,0 +1,24 @@
+### Book Organizer – Lab Tasks
+
+1. **Create an array of objects named `books`.**  
+   Each object must have three properties:  
+   - `title` (string)  
+   - `authorName` (string)  
+   - `releaseYear` (number)  
+
+   The array must contain **at least three** book objects.
+
+2. **Implement a callback function named `sortByYear`** that accepts two book objects as parameters.  
+   - Return `-1` if the first book's `releaseYear` is smaller than the second book's `releaseYear`.  
+   - Return `1` if the first book's `releaseYear` is larger than the second book's `releaseYear`.  
+   - Return `0` if both release years are equal.
+
+3. **Filter the `books` array** to keep only books released **on or before the year 1950** (i.e., remove books written after 1950).  
+   Store the result in a **new array** named `filteredBooks`.
+
+4. **Sort the `filteredBooks` array** in ascending order (oldest to newest) based on `releaseYear`.  
+   Use the `sortByYear` callback with the `sort()` method.  
+   The sorting must **mutate** the `filteredBooks` array in place.
+
+5. **Ensure `filteredBooks` is not empty.**  
+   After filtering and sorting, `filteredBooks` should contain at least one book from the original array.
