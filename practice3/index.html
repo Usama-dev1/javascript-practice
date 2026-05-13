@@ -1,0 +1,202 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="script.js" defer></script>
+    <link href="./src/output.css" rel="stylesheet" />
+  </head>
+  <body class="bg-[#CFE4E2]">
+    <div class="min-h-screen flex items-start justify-center p-4">
+      <div class="w-full max-w-3xl bg-white rounded-lg shadow-lg px-5 py-3">
+        <h1 class="text-4xl min-w-full font-bold py-8 border-b">
+          New Job Application Form
+        </h1>
+        <form>
+          <div class="flex flex-col gap-2 py-4">
+            <label for="firstname" class="font-medium">Full Name :</label>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <input
+                type="text"
+                name="firstname"
+                id="firstname"
+                placeholder="First name"
+                class="flex-1 border rounded px-3 py-2"
+              />
+              <input
+                type="text"
+                name="lastname"
+                id="lastname"
+                placeholder="Last name"
+                class="flex-1 border rounded px-3 py-2"
+              />
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-2 py-4">
+            <div class="flex flex-col sm:flex-row gap-4">
+              <label for="email" class="flex-1 font-medium">E-mail :</label>
+              <label for="phone" class="hidden sm:flex flex-1 font-medium"
+                >Phone Number :</label
+              >
+            </div>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="E-mail"
+                class="flex-1 border rounded px-3 py-2"
+              />
+              <label for="phone" class="flex-1 sm:hidden font-medium"
+                >Phone Number :</label
+              >
+              <input
+                type="tel"
+                name="phone"
+                id="phone"
+                placeholder="Phone Number"
+                class="flex-1 border rounded px-3 py-2"
+              />
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-2 py-4">
+            <div class="flex flex-col sm:flex-row gap-4">
+              <label for="position" class="flex-1 font-medium"
+                >What post are you applying for?</label
+              >
+              <label for="startDate" class="flex-1 font-medium"
+                >Available Start Date</label
+              >
+            </div>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <select
+                name="position"
+                id="position"
+                class="flex-1 border rounded px-3 py-2"
+              >
+                <option value="" disabled selected hidden>Select Post</option>
+                <option value="junior">Junior</option>
+                <option value="senior">Senior</option>
+                <option value="HR">HR</option>
+                <option value="admin">Admin</option>
+              </select>
+              <input
+                type="date"
+                name="startDate"
+                id="startDate"
+                class="flex-1 border rounded px-3 py-2"
+              />
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-2 py-4">
+            <div>
+              <p class="text-lg">What is your current employment status?</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 py-4 gap-4">
+              <label
+                ><input type="radio" name="employment_status" value="student" />
+                Student</label
+              >
+              <label
+                ><input
+                  type="radio"
+                  name="employment_status"
+                  value="employed"
+                />
+                Employed</label
+              >
+              <label
+                ><input
+                  type="radio"
+                  name="employment_status"
+                  value="self-employed"
+                />
+                Self-Employed</label
+              >
+              <label
+                ><input
+                  type="radio"
+                  name="employment_status"
+                  value="unemployed"
+                />
+                Unemployed</label
+              >
+            </div>
+          </div>
+          <div class="flex flex-col gap-2 py-2">
+            <div>
+              <p class="text-lg">How will you prefer to submit your resume?</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 py-2 gap-4">
+              <label
+                ><input
+                  type="radio"
+                  id="upload-cv"
+                  name="employment_status"
+                  value="upload-cv"
+                />
+                Upload</label
+              >
+              <label
+                ><input
+                  type="radio"
+                  id="upload-url"
+                  name="employment_status"
+                  value="upload-url"
+                />
+                Provide Url</label
+              >
+            </div>
+          </div>
+          <div class="w-full py-2">
+            <label for="upload" class="w-full block font-medium my-2"
+              >Upload Resume</label
+            >
+            <label
+              class="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100"
+            >
+              <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                <p class="mb-2 text-sm text-gray-500 font-semibold">
+                  Click to upload file
+                </p>
+                <p class="text-xs text-gray-400">PDF, PNG, or JPG</p>
+              </div>
+              <input type="file" name="user_file" id="file_cv" class="hidden" />
+            </label>
+          </div>
+          <div class="flex justify-center pt-4">
+            <button
+              id="submit"
+              type="submit"
+              class="bg-emerald-600 text-xl text-white py-2 px-6 rounded-md hover:bg-emerald-700 transition"
+            >
+              Submit Application
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div
+      id="overlay"
+      class="fixed inset-0 z-50 flex justify-center items-center p-4"
+    >
+      <div class="bg-black/50 absolute inset-0 z-40"></div>
+      <div
+        class="relative bg-white z-50 rounded-lg shadow-lg w-full max-w-lg mx-auto p-6 overflow-y-auto max-h-[90vh]"
+      >
+        <button
+          id="closeOverlay"
+          class="absolute right-2 top-2 w-8 h-8 rounded-full bg-red-500 text-white text-lg flex items-center justify-center"
+        >
+          X
+        </button>
+        <h2 class="text-xl font-bold mb-4 pr-8">Submitted Values</h2>
+        <div id="displayValues"></div>
+        <p class="form-value text-md"></p>
+      </div>
+    </div>
+  </body>
+</html>
