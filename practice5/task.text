@@ -1,0 +1,26 @@
+## Task the Library Code
+These questions test array methods (`map`, `filter`, `reduce`), string manipulation, object property access, and functional programming patterns.
+
+1. **Write a function `getBookInformation(catalog)` that returns a string listing all book titles and authors in the format `"Title by Author"`, each on a new line.**
+
+2. **Write a function `getBookSummaries(catalog)` that returns a string containing the `about` property of every book, each on a new line.**
+
+3. **Write a function `getBooksByAuthor(catalog, authorName)` that returns an array of all book objects written by the specified author. Use `filter()`.**
+
+4. **Using the library array, write a one‑liner to get an array of all unique authors (no duplicates).**
+
+5. **Write a function `getTotalPages(arr)` that returns the sum of all `pages` properties in the library. Use `reduce()`.**
+
+6. **Write a function `getLongestBook(catalog)` that returns the title of the book with the most pages.**
+
+7. **Write a function `getBookTitlesWithPageCount(catalog, minPages, maxPages)` that returns an array of book titles whose page count is between `minPages` and `maxPages` (inclusive).**
+
+8. **Using `filter()` and `map()`, create an array of titles of books that have `"business"` in their `about` text (case‑insensitive).**
+
+9. **Write a function `groupBooksByAuthor(catalog)` that returns an object where each key is an author name and the value is an array of that author's book titles.**
+
+10. **Write a function `getAveragePages(catalog)` that returns the average number of pages across all books.**
+
+11. **Write a function `getShortSummary(catalog)` that returns an array of strings in the format `"Title (pages)"` for each book.**
+
+12. **Write a function `isAnyBookByAuthor(catalog, authorName)` that returns `true` if at least one book is written by the given author, otherwise `false`. Use `some()`.**
