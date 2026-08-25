@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+body,
+button,
+input,
+textarea,
+select {
+  font-family: "Courier New", monospace;
+}
